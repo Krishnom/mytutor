@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Playing video "{{video.title}}" made  by {{video.author}}</h1>
+<video controls><source src="{{video.video_file.url}}" type="video/mp4"></video>
+{% endblock %}
