@@ -26,5 +26,5 @@ def upload_video_view(request, *args, **kwargs):
 
 def play_video_view(request, id):
     # video = Video.objects.get(id=video_id)
-    video = get_object_or_404(Video, id=id)
+    video = get_object_or_404(Video, uuid=id)
     return render(request, 'video/play.html', {"video": video})

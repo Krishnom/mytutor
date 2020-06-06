@@ -2,4 +2,10 @@ db.sqlite3
 .idea
 /uploaded/
 /**/migrations/
-/**/_pycache__
+/**/__pycache__/
+
+#virtual env
+/Lib/
+/Scripts/
+pyvenv.cfg
+info.log
