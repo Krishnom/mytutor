@@ -23,6 +23,7 @@ SECRET_KEY = 'r$)#vz)hpk!p_4$vrkvk-kogl49h@&8$b8*au_m_0@f0gz#flz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+PRODUCTION = False
 
 ALLOWED_HOSTS = []
 
@@ -118,27 +119,30 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT='staticfiles'
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploaded")
 MEDIA_URL = "/video/"
 
 # For better web page ui
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': 'info.log',
+
+if PRODUCTION :
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'file': {
+                'level': 'INFO',
+                'class': 'logging.FileHandler',
+                'filename': 'info.log',
+            },
         },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'INFO',
-            'propagate': True,
+        'loggers': {
+            'django': {
+                'handlers': ['file'],
+                'level': 'INFO',
+                'propagate': True,
+            },
         },
-    },
-}
+    }
