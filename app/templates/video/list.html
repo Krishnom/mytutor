@@ -18,9 +18,8 @@
         <th>{{video.title}}</th>
         <th>{{video.author}}</th>
         <th>{{video.uploaded_date}}</th>
-        <!--        <th><a href="{% url 'app:play' video.id  %}}" class="btn btn-primary btn-sm">Play Video</a></th>-->
-        <th><a href="{{video.video_file.url}}" class="btn btn-primary btn-sm">Play Video</a></th>
-    </tr>
+        <th><a href="{% url 'app:play' video.uuid  %}" class="btn btn-primary btn-sm">Play Video</a></th>
+        </tr>
     {% endfor %}
     </tbody>
 </table>

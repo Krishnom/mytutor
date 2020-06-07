@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
-from app.views import list_available_videos_view, upload_video_view, play_video_view
+from app.views import list_available_videos_view, login_view, logout_view, signup_view
 
 urlpatterns = [
     path("app/", include('app.urls')),
     path("", list_available_videos_view, name="home"),
+    path("accounts/login/", login_view, name="login"), 
+    path("accounts/signup/", signup_view, name="signup"), 
+    path("accounts/logout/", logout_view, name="logout"), 
     path('admin/', admin.site.urls),
 ]
 
