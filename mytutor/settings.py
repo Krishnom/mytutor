@@ -77,12 +77,25 @@ WSGI_APPLICATION = 'mytutor.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#User postgres in production
+if PRODUCTION:
+    DATABASES = {
+        'postgres': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': '<dbname>',
+            'USER': '<username>',
+            'PASSWORD': '<password>',
+            'HOST': '<dbhost>',
+            'PORT': '5432'
+        }
     }
-}
+else :
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -119,7 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT='staticfiles'
+STATIC_ROOT='staticfiles'
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploaded")
 MEDIA_URL = "/video/"
 
@@ -127,7 +140,7 @@ MEDIA_URL = "/video/"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
-if PRODUCTION :
+if PRODUCTION:
     LOGGING = {
         'version': 1,
         'disable_existing_loggers': False,
