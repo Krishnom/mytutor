@@ -4,7 +4,10 @@ App to aid disance learning
 
 ## How to deploy
 
-> Prerequisites - python3 (https://www.python.org/downloads/source/) and pip3 (https://pip.pypa.io/en/stable/installation/)
+
+### Prerequisites - 
+1. python3 (https://www.python.org/downloads/source/) 
+2. pip3 (https://pip.pypa.io/en/stable/installation/)
 
 
 Execute below commands
