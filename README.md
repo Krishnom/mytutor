@@ -1,4 +1,4 @@
-# mytutor
+# MyTutor webapp
 
 App to aid disance learning
 
