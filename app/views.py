@@ -31,7 +31,7 @@ def play_video_view(request, id):
     video = get_object_or_404(Video, uuid=id)
     return render(request, 'video/play.html', {"video": video})
 
-
+#Username and password accepted and pass it to login.html page
 def login_view(request):
     next = request.GET.get('next')
     form = UserLoginForm(request.POST or None)
@@ -48,7 +48,7 @@ def login_view(request):
     }
     return render(request, "login.html", context)
 
-
+#Username and password accepted for signup
 def signup_view(request):
     next_url = request.GET.get('next')
     form = UserRegisterForm(request.POST or None)
