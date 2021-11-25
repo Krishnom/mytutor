@@ -1,6 +1,10 @@
 # MyTutor webapp
 
-App to aid disance learning
+App to aid disance learning. This webapp has ability to 
+1. Authenticate users.
+2. Upload a video by user given permisiions
+3. Create courses.
+4. Play videos.
 
 ## How to deploy
 
